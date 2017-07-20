@@ -22,6 +22,16 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%f", contaA.saldo);
             NSLog(@"deposito realizado com sucesso!");
         }
+        
+        deucerto = [contaA saque:800];
+        
+        if( deucerto){
+            NSLog(@"%f", contaA.saldo);
+            NSLog(@"saque realizado com sucesso!");
+        }else{
+            NSLog(@"Saque insuficiente");
+        }
+        
         deucerto = [ contaA tranfere:300 contaTransf:contaB];
         if( deucerto){
             NSLog(@"Transferencia realizada saldo conta A: %f. Saldo conta B: %f", contaA.saldo, contaB.saldo);

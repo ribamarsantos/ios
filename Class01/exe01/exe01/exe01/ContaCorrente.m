@@ -12,6 +12,7 @@
 
 
 -(id)initConta:(int)numeroconta initSaldo:(double)saldo correntista:(NSString *)correntista;{
+    self = [super init];
     _numeroConta = numeroconta;
     _saldo = saldo;
     _correntista = correntista;
