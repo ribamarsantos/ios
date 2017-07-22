@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ContaCorrente.h"
+#import "ContaCorrente+ContaPoupanca.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -15,6 +16,8 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Let's go! conta corrente");
         ContaCorrente *contaA = [[ContaCorrente alloc] initConta:01 initSaldo:400 correntista:@"Ribamar"];
         ContaCorrente *contaB = [[ContaCorrente alloc] initConta:02 initSaldo:100 correntista:@"Santos"];
+        [contaA calculaRendimento];
+        NSLog(@"%f", contaA.saldo);
         
         bool deucerto = [ contaA deposita:700];
         

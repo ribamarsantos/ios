@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BB2792E01F1A830A0011056E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2792DF1F1A830A0011056E /* main.m */; };
 		BB2792E81F1A83C30011056E /* ContaCorrente.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2792E71F1A83C30011056E /* ContaCorrente.m */; };
+		BB46DEED1F23786600939F46 /* ContaCorrente+ContaPoupanca.m in Sources */ = {isa = PBXBuildFile; fileRef = BB46DEEC1F23786600939F46 /* ContaCorrente+ContaPoupanca.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		BB2792DF1F1A830A0011056E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BB2792E61F1A83C30011056E /* ContaCorrente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContaCorrente.h; sourceTree = "<group>"; };
 		BB2792E71F1A83C30011056E /* ContaCorrente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContaCorrente.m; sourceTree = "<group>"; };
+		BB46DEEB1F23786600939F46 /* ContaCorrente+ContaPoupanca.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ContaCorrente+ContaPoupanca.h"; sourceTree = "<group>"; };
+		BB46DEEC1F23786600939F46 /* ContaCorrente+ContaPoupanca.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ContaCorrente+ContaPoupanca.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				BB2792DF1F1A830A0011056E /* main.m */,
 				BB2792E61F1A83C30011056E /* ContaCorrente.h */,
 				BB2792E71F1A83C30011056E /* ContaCorrente.m */,
+				BB46DEEB1F23786600939F46 /* ContaCorrente+ContaPoupanca.h */,
+				BB46DEEC1F23786600939F46 /* ContaCorrente+ContaPoupanca.m */,
 			);
 			path = exe01;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			files = (
 				BB2792E01F1A830A0011056E /* main.m in Sources */,
 				BB2792E81F1A83C30011056E /* ContaCorrente.m in Sources */,
+				BB46DEED1F23786600939F46 /* ContaCorrente+ContaPoupanca.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +260,7 @@
 				BB2792E51F1A830A0011056E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
