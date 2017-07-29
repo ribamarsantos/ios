@@ -14,6 +14,7 @@
 		81FB9B651F2CFBCB00E9F960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81FB9B641F2CFBCB00E9F960 /* Assets.xcassets */; };
 		81FB9B681F2CFBCB00E9F960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81FB9B661F2CFBCB00E9F960 /* LaunchScreen.storyboard */; };
 		81FB9B731F2D0C7300E9F960 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FB9B721F2D0C7300E9F960 /* ItemsViewController.m */; };
+		81FB9B761F2D19A700E9F960 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FB9B751F2D19A700E9F960 /* CustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		81FB9B691F2CFBCB00E9F960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81FB9B711F2D0C7300E9F960 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
 		81FB9B721F2D0C7300E9F960 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
+		81FB9B741F2D19A700E9F960 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		81FB9B751F2D19A700E9F960 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				81FB9B581F2CFBCB00E9F960 /* Supporting Files */,
 				81FB9B711F2D0C7300E9F960 /* ItemsViewController.h */,
 				81FB9B721F2D0C7300E9F960 /* ItemsViewController.m */,
+				81FB9B741F2D19A700E9F960 /* CustomTableViewCell.h */,
+				81FB9B751F2D19A700E9F960 /* CustomTableViewCell.m */,
 			);
 			path = AppExeInterface;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				81FB9B601F2CFBCB00E9F960 /* ViewController.m in Sources */,
 				81FB9B731F2D0C7300E9F960 /* ItemsViewController.m in Sources */,
 				81FB9B5D1F2CFBCB00E9F960 /* AppDelegate.m in Sources */,
+				81FB9B761F2D19A700E9F960 /* CustomTableViewCell.m in Sources */,
 				81FB9B5A1F2CFBCB00E9F960 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

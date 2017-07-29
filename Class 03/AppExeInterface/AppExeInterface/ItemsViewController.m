@@ -7,6 +7,7 @@
 //
 
 #import "ItemsViewController.h"
+#import "CustomTableViewCell.h"
 
 @interface ItemsViewController ()
 
@@ -17,7 +18,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.diasSemanaArray = @[ @"Segunda-feira", @"Terça-feira",@"Quarta-feira", @"Quinta-feira", @"Sexta-feira", @"Sábado", @"Domingo" ];
-    
+    self.dicMyList = @[
+                       @{
+                       @"name": @"Ribamar",
+                       @"email": @"ribamaar@gmail.com",
+                       @"street": @"R. Jd. Boa Sorte",
+                       @"country": @"Brasil"
+                       },
+                       @{
+                           @"name": @"Jessica",
+                           @"email": @"jessica@gmail.com",
+                           @"street": @"R. Jd. Boa Sorte",
+                           @"country": @"Brasil"
+                           },
+                       @{
+                           @"name": @"Amanda",
+                           @"email": @"ribamaar@gmail.com",
+                           @"street": @"R. Paulista",
+                           @"country": @"Brasil"
+                           },
+                       @{
+                           @"name": @"Joyce",
+                           @"email": @"joyce@gmail.com",
+                           @"street": @"R. Jd Piedade",
+                           @"country": @"Brasil"
+                           }
+                       ];
     // Do any additional setup after loading the view.
 }
 
@@ -31,19 +57,33 @@
 }
 // tamanha do tableview
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.diasSemanaArray.count;
+    return self.dicMyList.count;
 }
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString * identificador;
+   // NSString * identificador;
     
-    if( indexPath.row % 2 == 0 ){
-        identificador = @"blueCell";
-    }else{
-        identificador = @"whiteCell";
-    }
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier: identificador forIndexPath:indexPath];
-    cell.textLabel.text = self.diasSemanaArray[ indexPath.row];
+    CustomTableViewCell * cell = [ tableView dequeueReusableCellWithIdentifier:@"customCell" forIndexPath:indexPath];
+    
+    NSDictionary *myLocalList = self.dicMyList[ indexPath.row];
+    cell.lblName.text = myLocalList[@"name"];
+    cell.lblEmail.text =myLocalList[@"email"];
+    cell.lblStreet.text = myLocalList[@"street"];
+    cell.lblCountry.text = myLocalList[@"country"];
+    
     return cell;
+    
+//    if( indexPath.row % 2 == 0 ){
+//        identificador = @"blueCell";
+//    }else{
+//        identificador = @"whiteCell";
+//    }
+//    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier: identificador forIndexPath:indexPath];
+//    cell.textLabel.text = self.diasSemanaArray[ indexPath.row];
+//    return cell;
+    
+    
+    
+    
     
     
 }

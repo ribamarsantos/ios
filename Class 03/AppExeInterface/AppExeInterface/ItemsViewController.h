@@ -11,5 +11,6 @@
 @interface ItemsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic) NSArray * diasSemanaArray;
+@property (nonatomic) NSArray * dicMyList;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewDiasSemana;
 @end
