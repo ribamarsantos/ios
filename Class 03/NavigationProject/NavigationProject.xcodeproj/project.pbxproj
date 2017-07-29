@@ -14,6 +14,9 @@
 		81FB9B361F2CD08D00E9F960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81FB9B351F2CD08D00E9F960 /* Assets.xcassets */; };
 		81FB9B391F2CD08D00E9F960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81FB9B371F2CD08D00E9F960 /* LaunchScreen.storyboard */; };
 		81FB9B421F2CD6B800E9F960 /* UltimaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FB9B411F2CD6B800E9F960 /* UltimaViewController.m */; };
+		81FB9B451F2CEFB600E9F960 /* YellowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FB9B441F2CEFB600E9F960 /* YellowViewController.m */; };
+		81FB9B481F2CEFE600E9F960 /* RedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FB9B471F2CEFE600E9F960 /* RedViewController.m */; };
+		81FB9B4B1F2CEFF400E9F960 /* GreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FB9B4A1F2CEFF400E9F960 /* GreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,12 @@
 		81FB9B3A1F2CD08D00E9F960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81FB9B401F2CD6B800E9F960 /* UltimaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltimaViewController.h; sourceTree = "<group>"; };
 		81FB9B411F2CD6B800E9F960 /* UltimaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltimaViewController.m; sourceTree = "<group>"; };
+		81FB9B431F2CEFB600E9F960 /* YellowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YellowViewController.h; sourceTree = "<group>"; };
+		81FB9B441F2CEFB600E9F960 /* YellowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YellowViewController.m; sourceTree = "<group>"; };
+		81FB9B461F2CEFE600E9F960 /* RedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedViewController.h; sourceTree = "<group>"; };
+		81FB9B471F2CEFE600E9F960 /* RedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedViewController.m; sourceTree = "<group>"; };
+		81FB9B491F2CEFF400E9F960 /* GreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenViewController.h; sourceTree = "<group>"; };
+		81FB9B4A1F2CEFF400E9F960 /* GreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +81,12 @@
 				81FB9B291F2CD08D00E9F960 /* Supporting Files */,
 				81FB9B401F2CD6B800E9F960 /* UltimaViewController.h */,
 				81FB9B411F2CD6B800E9F960 /* UltimaViewController.m */,
+				81FB9B431F2CEFB600E9F960 /* YellowViewController.h */,
+				81FB9B441F2CEFB600E9F960 /* YellowViewController.m */,
+				81FB9B461F2CEFE600E9F960 /* RedViewController.h */,
+				81FB9B471F2CEFE600E9F960 /* RedViewController.m */,
+				81FB9B491F2CEFF400E9F960 /* GreenViewController.h */,
+				81FB9B4A1F2CEFF400E9F960 /* GreenViewController.m */,
 			);
 			path = NavigationProject;
 			sourceTree = "<group>";
@@ -156,8 +171,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81FB9B421F2CD6B800E9F960 /* UltimaViewController.m in Sources */,
+				81FB9B451F2CEFB600E9F960 /* YellowViewController.m in Sources */,
 				81FB9B311F2CD08D00E9F960 /* ViewController.m in Sources */,
 				81FB9B2E1F2CD08D00E9F960 /* AppDelegate.m in Sources */,
+				81FB9B481F2CEFE600E9F960 /* RedViewController.m in Sources */,
+				81FB9B4B1F2CEFF400E9F960 /* GreenViewController.m in Sources */,
 				81FB9B2B1F2CD08D00E9F960 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +333,7 @@
 				81FB9B3F1F2CD08D00E9F960 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

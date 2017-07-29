@@ -30,7 +30,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="OLG-Fw-STL" kind="show" id="2GV-9m-sKi"/>
+                                    <segue destination="OLG-Fw-STL" kind="show" identifier="segueVerde" id="2GV-9m-sKi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNp-9t-V6E">
@@ -42,7 +42,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="nSA-6F-l6c" kind="show" id="geD-Lh-yW3"/>
+                                    <segue destination="nSA-6F-l6c" kind="show" identifier="segueVermelho" id="d2p-eW-IXB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkh-ue-mPg">
@@ -54,7 +54,7 @@
                                     <color key="titleColor" white="0.6398925781" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1ea-1c-VQd" kind="show" id="gNe-gi-PJT"/>
+                                    <segue destination="1ea-1c-VQd" kind="show" identifier="segueAmarelo" id="gNe-gi-PJT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,7 +71,7 @@
         <!--Yellow View-->
         <scene sceneID="9ZX-yN-gye">
             <objects>
-                <viewController id="1ea-1c-VQd" sceneMemberID="viewController">
+                <viewController id="1ea-1c-VQd" customClass="YellowViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gGY-p5-153"/>
                         <viewControllerLayoutGuide type="bottom" id="wdL-jr-5en"/>
@@ -90,10 +90,20 @@
                                     <segue destination="7cx-eb-fzo" kind="show" id="QuI-EN-EH5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofd-KJ-E0O">
+                                <rect key="frame" x="16" y="115" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.84581708961748814" blue="0.26510832586428412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Yellow View" id="oxj-gE-i1T"/>
+                    <connections>
+                        <outlet property="lblHead" destination="Ofd-KJ-E0O" id="dER-BH-79F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eke-AB-kmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,7 +112,7 @@
         <!--Red View-->
         <scene sceneID="T4X-nY-kDA">
             <objects>
-                <viewController id="nSA-6F-l6c" sceneMemberID="viewController">
+                <viewController id="nSA-6F-l6c" customClass="RedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4HN-h5-JLK"/>
                         <viewControllerLayoutGuide type="bottom" id="Beo-hz-dLZ"/>
@@ -123,10 +133,20 @@
                                     <segue destination="0Vb-gR-YAu" kind="show" id="WLk-YS-eTr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtL-ib-Uay">
+                                <rect key="frame" x="16" y="124" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.75789181472081224" green="0.12364302835999304" blue="0.052751906637076414" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Red View" id="fO8-Vt-XXT"/>
+                    <connections>
+                        <outlet property="lblHead" destination="MtL-ib-Uay" id="5XO-zg-9iA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmK-j7-JJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -231,7 +251,7 @@
         <!--Green View-->
         <scene sceneID="XyF-aD-Fd4">
             <objects>
-                <viewController id="OLG-Fw-STL" sceneMemberID="viewController">
+                <viewController id="OLG-Fw-STL" customClass="GreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BCe-si-1ED"/>
                         <viewControllerLayoutGuide type="bottom" id="Z5o-Zk-Rsl"/>
@@ -251,10 +271,20 @@
                                     <segue destination="O9A-k4-2yf" kind="show" id="li6-xH-nXS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyr-ZK-7gh">
+                                <rect key="frame" x="16" y="151" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.12791126859999999" green="0.4657747733" blue="0.22588232680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Green View" id="XF3-MO-8jz"/>
+                    <connections>
+                        <outlet property="lblHead" destination="Fyr-ZK-7gh" id="w7W-LO-iX5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvO-EN-cDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
