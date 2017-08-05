@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self carregarTableView];
+    //[self carregarTableView];
 }
 
 
@@ -57,6 +57,9 @@
     [self carregarTableView];
 }
 
+-(void) viewWillAppear:(BOOL)animated{
+    [self carregarTableView];
+}
 
 -(void) carregarTableView{
     AFHTTPRequestOperationManager	*manager	=	[AFHTTPRequestOperationManager
@@ -73,8 +76,7 @@
          }];
 }
 
-- (IBAction)novoComentario:(id)sender {
-}
+
 
 
 @end

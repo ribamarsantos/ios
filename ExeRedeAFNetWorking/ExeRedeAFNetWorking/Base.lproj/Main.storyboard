@@ -84,7 +84,7 @@
                             <barButtonItem title="Comentar" id="wCV-mW-zp1">
                                 <connections>
                                     <action selector="novoComentario:" destination="BYZ-38-t0r" id="n4H-6x-VRI"/>
-                                    <segue destination="THh-C7-Mj4" kind="show" id="Bim-46-N4Q"/>
+                                    <segue destination="THh-C7-Mj4" kind="show" id="gsu-6C-BaF"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Reload" id="y4t-wS-aX0">
