@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		815DD4F61F35E8CE00DBCC10 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = 815DD4F51F35E8CE00DBCC10 /* Usuario.m */; };
 		BBF87FF71F353F7D00359632 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF87FF61F353F7D00359632 /* main.m */; };
 		BBF87FFA1F353F7D00359632 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF87FF91F353F7D00359632 /* AppDelegate.m */; };
 		BBF87FFD1F353F7D00359632 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF87FFC1F353F7D00359632 /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		815DD4F41F35E8CE00DBCC10 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
+		815DD4F51F35E8CE00DBCC10 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 		BBF87FF21F353F7D00359632 /* Canada Calc Express Entry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Canada Calc Express Entry.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF87FF61F353F7D00359632 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BBF87FF81F353F7D00359632 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +85,8 @@
 				BBF880121F354FE200359632 /* MainViewController.m */,
 				BBF880141F355E3500359632 /* CalcCoreFactor01ViewController.h */,
 				BBF880151F355E3500359632 /* CalcCoreFactor01ViewController.m */,
+				815DD4F41F35E8CE00DBCC10 /* Usuario.h */,
+				815DD4F51F35E8CE00DBCC10 /* Usuario.m */,
 			);
 			path = "Canada Calc Express Entry";
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 				BBF87FF71F353F7D00359632 /* main.m in Sources */,
 				BBF880131F354FE200359632 /* MainViewController.m in Sources */,
 				BBF880101F354F8300359632 /* CadastroViewController.m in Sources */,
+				815DD4F61F35E8CE00DBCC10 /* Usuario.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +335,7 @@
 				BBF8800B1F353F7D00359632 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
