@@ -42,6 +42,58 @@
 - (IBAction)btnCancelar:(id)sender {
     [ self.navigationController popViewControllerAnimated:YES];
 }
+- (IBAction)btnCapturarImagem:(id)sender {
+    [self startCameraControllerFromViewController:self usingDelegate: self];
+}
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+  
+    NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+    UIImage *originalImage, *editedImage, *imageToSave;
+    
+    // Handle a still image capture
+    if ([mediaType isEqualToString:@"public.image"]) {
+        editedImage = (UIImage *) [info objectForKey:  UIImagePickerControllerEditedImage];
+        originalImage = (UIImage *) [info objectForKey:  UIImagePickerControllerOriginalImage];
+        
+        if (editedImage) {
+            imageToSave = editedImage;
+        }
+        else {
+            imageToSave = originalImage;
+        }
+        
+        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil , nil);
+        //[self.imgComment setImage:imageToSave];
+        self.imgComment.image = imageToSave;
+    }
+    
+    // Handle a movie capture
+    if ([mediaType isEqualToString:@"public.movie"]) {
+        
+        NSString *moviePath = [[info objectForKey: UIImagePickerControllerMediaURL] path];
+        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(moviePath)) {
+            UISaveVideoAtPathToSavedPhotosAlbum(moviePath, nil, nil, nil);
+        }
+    }   
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (BOOL) startCameraControllerFromViewController: (UIViewController*) controller  usingDelegate: (id <UIImagePickerControllerDelegate, UINavigationControllerDelegate>)delegate {
+    if (([UIImagePickerController isSourceTypeAvailable:  UIImagePickerControllerSourceTypePhotoLibrary] == NO)
+        || (delegate == nil)
+        || (controller == nil))  return NO;
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];  cameraUI.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    cameraUI.mediaTypes =
+    [UIImagePickerController availableMediaTypesForSourceType:
+     UIImagePickerControllerSourceTypePhotoLibrary];
+    cameraUI.allowsEditing = NO;
+    
+    cameraUI.delegate = delegate; 
+    [controller presentViewController: cameraUI animated: YES completion:nil];  return YES; 
+}
 
 /*
 #pragma mark - Navigation

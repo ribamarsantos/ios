@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NovoComentarioViewController : UIViewController
+@interface NovoComentarioViewController : UIViewController < UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtUser;
 @property (weak, nonatomic) IBOutlet UITextView *txtComentario;
+@property (weak, nonatomic) IBOutlet UIImageView *imgComment;
 
 @end
