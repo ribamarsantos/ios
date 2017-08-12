@@ -10,6 +10,8 @@
 #import <AFNetworking.h>
 #import "CustomTableViewCell.h"
 #import <UIImageView+AFNetworking.h>
+#import <SVProgressHUD.h>
+#import "ServerAPI.h"
 
 @interface ViewController ()
 
@@ -21,6 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [SVProgressHUD show];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
+  
+   // [SVProgressHUD setFadeInAnimationDuration:3.0f];
     //[self carregarTableView];
 }
 
@@ -54,26 +60,39 @@
     return cell;
 }
 - (IBAction)reloadTableViewComments:(id)sender {
+
     [self carregarTableView];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
+    
     [self carregarTableView];
 }
 
 -(void) carregarTableView{
-    AFHTTPRequestOperationManager	*manager	=	[AFHTTPRequestOperationManager
-                                                     manager];
-    [manager	GET:@"http://teste-aula-ios.herokuapp.com/comments.json"
-      parameters:nil
-         success:^(AFHTTPRequestOperation	*operation,	id responseObject)	{
-             
-             self.comments = responseObject;
-             //NSLog(@"comments:	%@",	self.comments);
-             [self.tableViewComment reloadData ];
-         }	failure:^(AFHTTPRequestOperation	*operation,	NSError	*error)	{
-             NSLog(@"Error:	%@",	error);
-         }];
+
+        [[ServerAPI sharedClient] getComments:^(NSArray *comments) {
+            self.comments = comments;
+            [self.tableViewComment reloadData ];
+            [SVProgressHUD dismiss];
+        } andErrorBlock:^(NSError *error, AFHTTPRequestOperation *operation) {
+            NSLog(@"Error:	%@",	error);
+            [SVProgressHUD dismiss];
+        }];
+    
+    //    AFHTTPRequestOperationManager	*manager	=	[AFHTTPRequestOperationManager
+//                                                     manager];
+//    [manager	GET:@"http://teste-aula-ios.herokuapp.com/comments.json"
+//      parameters:nil
+//         success:^(AFHTTPRequestOperation	*operation,	id responseObject)	{
+//             
+//             self.comments = responseObject;
+//             //NSLog(@"comments:	%@",	self.comments);
+//             [self.tableViewComment reloadData ];
+//             [SVProgressHUD dismiss];
+//         }	failure:^(AFHTTPRequestOperation	*operation,	NSError	*error)	{
+//             NSLog(@"Error:	%@",	error);
+//         }];
 }
 
 

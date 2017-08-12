@@ -16,6 +16,7 @@
 		815DD5391F362E2100DBCC10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815DD5371F362E2100DBCC10 /* LaunchScreen.storyboard */; };
 		815DD5421F36471100DBCC10 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815DD5411F36471100DBCC10 /* CustomTableViewCell.m */; };
 		815DD5481F3650D700DBCC10 /* NovoComentarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815DD5471F3650D700DBCC10 /* NovoComentarioViewController.m */; };
+		81A688741F3F6AEB00EAF54A /* ServerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A688731F3F6AEB00EAF54A /* ServerAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		815DD5411F36471100DBCC10 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		815DD5461F3650D700DBCC10 /* NovoComentarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NovoComentarioViewController.h; sourceTree = "<group>"; };
 		815DD5471F3650D700DBCC10 /* NovoComentarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NovoComentarioViewController.m; sourceTree = "<group>"; };
+		81A688721F3F6AEB00EAF54A /* ServerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerAPI.h; sourceTree = "<group>"; };
+		81A688731F3F6AEB00EAF54A /* ServerAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerAPI.m; sourceTree = "<group>"; };
 		D6BE1E3E76024D9DEBB89E07 /* Pods-ExeRedeAFNetWorking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExeRedeAFNetWorking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExeRedeAFNetWorking/Pods-ExeRedeAFNetWorking.debug.xcconfig"; sourceTree = "<group>"; };
 		F59F29CEEE21A20293B366E7 /* libPods-ExeRedeAFNetWorking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ExeRedeAFNetWorking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +95,8 @@
 				815DD5411F36471100DBCC10 /* CustomTableViewCell.m */,
 				815DD5461F3650D700DBCC10 /* NovoComentarioViewController.h */,
 				815DD5471F3650D700DBCC10 /* NovoComentarioViewController.m */,
+				81A688721F3F6AEB00EAF54A /* ServerAPI.h */,
+				81A688731F3F6AEB00EAF54A /* ServerAPI.m */,
 			);
 			path = ExeRedeAFNetWorking;
 			sourceTree = "<group>";
@@ -189,9 +194,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ExeRedeAFNetWorking/Pods-ExeRedeAFNetWorking-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -239,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				815DD5481F3650D700DBCC10 /* NovoComentarioViewController.m in Sources */,
+				81A688741F3F6AEB00EAF54A /* ServerAPI.m in Sources */,
 				815DD5311F362E2100DBCC10 /* ViewController.m in Sources */,
 				815DD52E1F362E2100DBCC10 /* AppDelegate.m in Sources */,
 				815DD5421F36471100DBCC10 /* CustomTableViewCell.m in Sources */,

@@ -1,0 +1,24 @@
+PODS:
+  - MSSlidingPanelController (1.3.6)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - MSSlidingPanelController
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
+
+EXTERNAL SOURCES:
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+CHECKOUT OPTIONS:
+  SVProgressHUD:
+    :commit: 7e3139d2d56b336e48c178cc4605966191f4ac24
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+SPEC CHECKSUMS:
+  MSSlidingPanelController: a0515f4e0724fbe4de0970b2fac23ef16366f75c
+  SVProgressHUD: d65371a8e4482380deddb9fe60e14e59ddb30eb3
+
+PODFILE CHECKSUM: 9ce2714969e3ea11363d9b50d932df15c6738460
+
+COCOAPODS: 1.3.0

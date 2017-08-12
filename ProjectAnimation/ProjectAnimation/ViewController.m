@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import <SVProgressHUD.h>
 @interface ViewController ()
 
 @end
@@ -21,6 +21,11 @@
     rec.origin.x = (rec.size.width * -1);
     
     self.txtBusca.frame = rec;
+    
+    [SVProgressHUD show];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
+    [SVProgressHUD setFadeInAnimationDuration:3.0f];
+    [SVProgressHUD dismissWithDelay:5.0];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
