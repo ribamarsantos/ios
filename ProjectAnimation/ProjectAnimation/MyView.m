@@ -18,4 +18,19 @@
 }
 */
 
+-(void) hideElements{
+    self.btnUse.frame = CGRectMake(160.f, 289.f, 0.f, 0.f);
+    self.btnBack.frame = CGRectMake(159.f, 288.f, 0.f, 0.f);
+    
+    
+}
+
+-(void) showElements{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1.0];
+    self.btnUse.frame = CGRectMake(111.f, 289.f, 98.f, 72.f);
+    self.btnBack.frame = CGRectMake(65.f, 288.f, 94.f, 73.f);
+    [UIView commitAnimations];
+    
+}
 @end

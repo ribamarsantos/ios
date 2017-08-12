@@ -28,8 +28,23 @@
 - (IBAction)showView:(id)sender {
     // pegar arquivo .xib
     self.myView = [[[NSBundle mainBundle] loadNibNamed:@"MyView" owner:self options:nil] objectAtIndex:0];
-    // carregar na tela
-    [self.view addSubview:self.myView];
+    // esconde botoes
+    [self.myView hideElements];
+    // animacao
+    [UIView transitionWithView: self.view
+                           duration:0.5
+                           options:UIViewAnimationOptionTransitionCrossDissolve
+                          //options: UIViewAnimationOptionTransitionFlipFromTop
+                          //options: UIViewAnimationOptionCurveEaseIn
+                             animations:^{
+                               // carregar na tela
+                               [self.view addSubview:self.myView];
+                               
+                           }completion: ^ (BOOL finished){
+                               // ao finalizar exibicao da viao anima os botoes
+                               [self.myView showElements];
+                           }];
+
 }
 
 @end

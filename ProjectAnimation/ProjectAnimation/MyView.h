@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MyView : UIView
+@property (weak, nonatomic) IBOutlet UIButton *btnUse;
+@property (weak, nonatomic) IBOutlet UIButton *btnBack;
+-(void) hideElements;
+-(void) showElements;
 
 @end
