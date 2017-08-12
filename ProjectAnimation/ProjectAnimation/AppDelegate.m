@@ -17,6 +17,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *leftViewController = [storyboard instantiateViewControllerWithIdentifier: @"LeftViewController"];
+    UIViewController *rightViewController = [storyboard instantiateViewControllerWithIdentifier: @"RightViewController"];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier: @"ViewController"];
+    
+    self.slidingPanelController = [[MSSlidingPanelController alloc]
+                                   initWithCenterViewController:viewController
+                                   leftPanelController:leftViewController
+                                   andRightPanelController:rightViewController];
+    [[self window] setRootViewController:self.slidingPanelController];
     return YES;
 }
 

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <SVProgressHUD.h>
+#import "AppDelegate.h"
 @interface ViewController ()
 
 @end
@@ -18,7 +19,8 @@
     [super viewDidLoad];
     //esconder  16 29 266 30
     CGRect rec = self.txtBusca.frame;
-    rec.origin.x = (rec.size.width * -1);
+    //rec.origin.x = (rec.size.width * -1);
+    rec.origin.x = -1000;
     
     self.txtBusca.frame = rec;
     
@@ -27,6 +29,15 @@
     [SVProgressHUD setFadeInAnimationDuration:3.0f];
     [SVProgressHUD dismissWithDelay:5.0];
     // Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)btnShowRightMenu:(id)sender {
+    AppDelegate * appDelegate = (AppDelegate *) [[ UIApplication sharedApplication] delegate];
+    [appDelegate.slidingPanelController openRightPanel];
+}
+
+- (IBAction)btnShowLeftMenu:(id)sender {
+    AppDelegate * appDelegate = (AppDelegate *) [[ UIApplication sharedApplication] delegate];
+    [appDelegate.slidingPanelController openLeftPanel];
 }
 
 

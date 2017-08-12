@@ -16,6 +16,8 @@
 		81A688401F3F241700EAF54A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A6883E1F3F241700EAF54A /* LaunchScreen.storyboard */; };
 		81A688481F3F257F00EAF54A /* MyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A688471F3F257F00EAF54A /* MyView.xib */; };
 		81A6884B1F3F25F400EAF54A /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A6884A1F3F25F400EAF54A /* MyView.m */; };
+		81A688771F3F766A00EAF54A /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A688761F3F766A00EAF54A /* LeftViewController.m */; };
+		81A6887A1F3F76A300EAF54A /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A688791F3F76A300EAF54A /* RightViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		81A688471F3F257F00EAF54A /* MyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyView.xib; sourceTree = "<group>"; };
 		81A688491F3F25F400EAF54A /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
 		81A6884A1F3F25F400EAF54A /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		81A688751F3F766A00EAF54A /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		81A688761F3F766A00EAF54A /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		81A688781F3F76A300EAF54A /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
+		81A688791F3F76A300EAF54A /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
 		9C9BDBD32D5631FEF248A01C /* libPods-ProjectAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectAnimation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23C79B90D1D14B56DD2A5A7 /* Pods-ProjectAnimation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectAnimation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectAnimation/Pods-ProjectAnimation.debug.xcconfig"; sourceTree = "<group>"; };
 		D26299924F7B40186D857820 /* Pods-ProjectAnimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectAnimation.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectAnimation/Pods-ProjectAnimation.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +96,10 @@
 				81A688471F3F257F00EAF54A /* MyView.xib */,
 				81A688491F3F25F400EAF54A /* MyView.h */,
 				81A6884A1F3F25F400EAF54A /* MyView.m */,
+				81A688751F3F766A00EAF54A /* LeftViewController.h */,
+				81A688761F3F766A00EAF54A /* LeftViewController.m */,
+				81A688781F3F76A300EAF54A /* RightViewController.h */,
+				81A688791F3F76A300EAF54A /* RightViewController.m */,
 			);
 			path = ProjectAnimation;
 			sourceTree = "<group>";
@@ -241,9 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81A6884B1F3F25F400EAF54A /* MyView.m in Sources */,
+				81A688771F3F766A00EAF54A /* LeftViewController.m in Sources */,
 				81A688381F3F241700EAF54A /* ViewController.m in Sources */,
 				81A688351F3F241700EAF54A /* AppDelegate.m in Sources */,
 				81A688321F3F241700EAF54A /* main.m in Sources */,
+				81A6887A1F3F76A300EAF54A /* RightViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +416,7 @@
 				81A688461F3F241700EAF54A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
