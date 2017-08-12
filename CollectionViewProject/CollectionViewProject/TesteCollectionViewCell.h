@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TesteCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblInfo;
 
 @end
