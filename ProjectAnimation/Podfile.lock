@@ -1,0 +1,12 @@
+PODS:
+  - MSSlidingPanelController (1.3.6)
+
+DEPENDENCIES:
+  - MSSlidingPanelController
+
+SPEC CHECKSUMS:
+  MSSlidingPanelController: a0515f4e0724fbe4de0970b2fac23ef16366f75c
+
+PODFILE CHECKSUM: ed50b14692aeafcdf3205215c5824d4c79534b3c
+
+COCOAPODS: 1.3.0
