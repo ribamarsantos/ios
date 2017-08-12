@@ -12,6 +12,7 @@
 @interface ViewController : UIViewController
 
 @property(strong, nonatomic) MyView * myView;
+@property (weak, nonatomic) IBOutlet UITextField *txtBusca;
 
 @end
 
