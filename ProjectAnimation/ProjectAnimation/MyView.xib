@@ -24,6 +24,9 @@
                     <rect key="frame" x="65" y="288" width="94" height="73"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button" image="popup_button_back"/>
+                    <connections>
+                        <action selector="btnBack:" destination="iN0-l3-epB" eventType="touchUpInside" id="eVH-eX-TSG"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeL-Cz-7Gl">
                     <rect key="frame" x="111" y="289" width="98" height="72"/>
