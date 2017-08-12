@@ -26,6 +26,10 @@
 }
 
 - (IBAction)showView:(id)sender {
+    // pegar arquivo .xib
+    self.myView = [[[NSBundle mainBundle] loadNibNamed:@"MyView" owner:self options:nil] objectAtIndex:0];
+    // carregar na tela
+    [self.view addSubview:self.myView];
 }
 
 @end

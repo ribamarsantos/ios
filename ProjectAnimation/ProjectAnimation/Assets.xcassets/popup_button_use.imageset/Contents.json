@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "popup_button_use.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "popup_button_use.png",
       "scale" : "2x"
     },
     {
