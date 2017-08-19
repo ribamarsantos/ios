@@ -47,12 +47,11 @@
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.estados.allKeys.count;
+    return self.address.count;
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSString *regiao = self.estados.allKeys[section];
-    return [ self.estados[regiao] count];
+    return 1;
 }
 
 

@@ -11,7 +11,7 @@
 @interface ViewController : UIViewController <UITableViewDelegate,  UITableViewDataSource>
 
 //@property (nonatomic) NSDictionary * estados;
-@property (nonatomic) NSMutableDictionary * estados;
+@property (nonatomic) NSArray * address;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewRegiao;
 
