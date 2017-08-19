@@ -170,12 +170,7 @@
             NSLog(@"Erro");
         } else {
             if([response mapItems].count > 0){
-               // [self.resultAdress arrayByAddingObject:response];
                 self.resultAdress = [response mapItems];
-               //[self.tableViewResultAddress reloadData];
-                
-                //self.tableViewResultAddress.hidden = NO;
-                
                 
                 NSLog(@"%@", response);
                 
@@ -230,11 +225,15 @@
 
 -(UITableViewCell * ) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell * cell = [ tableView dequeueReusableCellWithIdentifier:@"customcell" forIndexPath:indexPath];
+   // UITableViewCell * cell = [ tableView dequeueReusableCellWithIdentifier:@"customcell" forIndexPath:indexPath];
     
+    UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                   reuseIdentifier:@"customCell"] ;
     
      MKMapItem * myObj = self.resultAdress[ indexPath.row];
     cell.textLabel.text =  myObj.name;
+    cell.detailTextLabel.text = myObj.phoneNumber;
+    
     
     //[self setPinOnMap:myObj.placemark.location];
     
@@ -275,4 +274,22 @@
     
 }
 
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    if([annotation isKindOfClass:[MKUserLocation class]]){
+        return nil;
+    }
+    
+    UIImage *image = [UIImage imageNamed:@"pin_med"];
+    
+    MKAnnotationView *pinView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"pin_med"];
+    
+    if(pinView != nil){
+        pinView.annotation = annotation;
+    }else{
+        pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin_med"];
+        pinView.image = image;
+        pinView.centerOffset = CGPointMake(0, -pinView.image.size.height / 2);
+    }
+    return pinView;
+}
 @end
