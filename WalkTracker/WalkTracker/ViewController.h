@@ -11,6 +11,8 @@
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate>
 
+@property (nonatomic, strong) CLLocationManager * locationManager;
+@property (nonatomic) BOOL startedWalk;
 
 @end
 
