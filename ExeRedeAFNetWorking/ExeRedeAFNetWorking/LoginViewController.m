@@ -31,8 +31,8 @@
 
     
     [manager POST: @"https://teste-aula-ios.herokuapp.com/users/sign_in.json"
-       parameters:@{ @"user" : @{ @"email": _txtLogin.text,
-                                  @"password": _txtPassword.text} }
+       parameters:@{ @"user" : @{ @"email": @"crystian@roadmaps.com.br",
+                                  @"password": @"12345678"} }
           success:^(AFHTTPRequestOperation * _Nonnull operation, id _Nonnull
                     responseObject) {
               

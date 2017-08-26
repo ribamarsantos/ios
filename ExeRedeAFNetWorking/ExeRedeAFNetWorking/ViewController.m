@@ -98,12 +98,48 @@
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *myObj = self.comments[ indexPath.row];
     
+    
     DetailCommentViewController * viewDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailCommentViewController"];
     
     
     viewDetail.comment = myObj;
     //[self  presentViewController:viewDetail animated:YES completion:nil];
-    [self.navigationController pushViewController:viewDetail animated:YES];
+    
+    
+    UIAlertController * alert = [ UIAlertController alertControllerWithTitle: @"Aviso" message:@"Opções" preferredStyle: UIAlertControllerStyleActionSheet ];
+    
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"Apagar" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //processo apagar
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        
+        NSString *urlApagar =  [NSString stringWithFormat:@"https://teste-aula-ios.herokuapp.com/comments/%@.json", self.comments[indexPath.row][@"id"]];
+        
+        [SVProgressHUD show];
+        [manager DELETE:urlApagar
+             parameters:nil
+                success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    [SVProgressHUD dismiss];
+                    //self.comments = [NSMutableArray arrayWithArray:responseObject];
+                    [self carregarTableView];
+                }    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    [SVProgressHUD dismiss];
+                    NSLog(@"Error: %@", error);
+                }];
+    }];
+    
+    UIAlertAction *detalharAction = [UIAlertAction actionWithTitle:@"Detalhar" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController pushViewController:viewDetail animated:YES];
+    }];
+    
+    UIAlertAction *cancelarAction = [UIAlertAction actionWithTitle:@"Cancelar" style:UIAlertActionStyleDefault handler:nil];
+    
+    
+    [alert addAction:deleteAction];
+    [alert addAction:detalharAction];
+    [alert addAction:cancelarAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+
 }
 
 

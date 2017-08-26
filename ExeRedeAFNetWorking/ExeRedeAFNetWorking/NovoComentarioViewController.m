@@ -8,6 +8,7 @@
 
 #import "NovoComentarioViewController.h"
 #import <AFNetworking.h>
+#import <SVProgressHUD.h>
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
@@ -42,6 +43,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)gravarNovoComentario:(id)sender {
+    [SVProgressHUD show];
      AFHTTPRequestOperationManager	*manager	=	[AFHTTPRequestOperationManager manager];
     
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -66,9 +68,11 @@
      
         success:^(AFHTTPRequestOperation	*operation,	id responseObject)	{
                NSLog(@"JSON:	%@",	responseObject);
+            [SVProgressHUD dismiss];
             [ self.navigationController popViewControllerAnimated:YES];
         }
         failure:^(AFHTTPRequestOperation	*operation,	NSError	*error)	{
+            [SVProgressHUD dismiss];
             NSInteger * returnStatus = [operation.response statusCode];
             if(  returnStatus == 401 ) {
                 [self.navigationController dismissViewControllerAnimated:YES completion:nil];
