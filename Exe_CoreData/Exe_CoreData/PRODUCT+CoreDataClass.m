@@ -52,4 +52,44 @@
     return produtos ;
 }
 
++(void) deleteProduto:(PRODUCT *) prod {
+    AppDelegate *app_d = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    [app_d.persistentContainer.viewContext deleteObject:prod];
+}
+
++(NSArray *) produtosComNome:(NSString *)nome {
+    AppDelegate *app_d = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    
+    //NSPredicate * pred = [NSPredicate predicateWithFormat:@"%K like %@",
+   //                            @"name", nome];
+    
+   //  NSPredicate *pred = [NSPredicate predicateWithFormat:@"name like %@", nome];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", nome];
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"PRODUCT"];
+  //  [req setReturnsObjectsAsFaults:NO];
+    [req setPredicate:pred];
+    NSError *error;
+    NSArray *p = [app_d.persistentContainer.viewContext  executeFetchRequest:req
+                                                                      error:&error];
+    return p;
+}
+
++(PRODUCT *) produtoComNome:(NSString *)nome {
+    AppDelegate *app_d = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"name == %@", nome];
+    NSFetchRequest *req = [NSFetchRequest   fetchRequestWithEntityName:@"PRODUCT" ];
+    [req setReturnsObjectsAsFaults:NO];
+    
+    [req setPredicate:pred];
+    NSError *error;
+    NSArray *p = [app_d.persistentContainer.viewContext  executeFetchRequest:req
+                                                                      error:&error];
+    return [p firstObject];
+    // NSArray *filtered = [data filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(BAR == %@)", @"foo"]];
+
+}
+
+
+
+
 @end

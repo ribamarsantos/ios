@@ -9,6 +9,7 @@
 #import "ProductItemsViewController.h"
 #import "PRODUCT+CoreDataClass.h"
 #import "PICTURE+CoreDataClass.h"
+#import <MGSwipeTableCell.h>"
 @interface ProductItemsViewController ()
 
 @end
@@ -50,16 +51,47 @@
     
 
     
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+//    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+//    
+//    PRODUCT * prod = self.arrProducts[ indexPath.row];
+//    cell.textLabel.text =  prod.name;
+//    cell.detailTextLabel.text = prod.brand;
+//    
+//
+//    
+//    
+//    return cell;
+    
+    
+    static NSString * reuseIdentifier = @"cell";
+    MGSwipeTableCell * cell = [self.tableViewProducts dequeueReusableCellWithIdentifier:reuseIdentifier];
+    if (!cell) {
+        cell = [[MGSwipeTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+    }
+    
+  //  cell.layer.cornerRadius = 50;
+  //  cell.backgroundColor = UIColor.gray;
+   // cell.clipsToBounds = true;
+  //  cell.swipeBackgroundColor = UIColor.gray;
+    
     
     PRODUCT * prod = self.arrProducts[ indexPath.row];
-    cell.textLabel.text =  prod.name;
+    cell.textLabel.text = prod.name;
     cell.detailTextLabel.text = prod.brand;
+   //  cell.delegate = self; //optional
     
-
     
+    //configure left buttons
+    cell.leftButtons = @[[MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"check.png"] backgroundColor:[UIColor greenColor]],
+                         [MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"fav.png"] backgroundColor:[UIColor blueColor]]];
+    cell.leftSwipeSettings.transition = MGSwipeTransition3D;
     
+    //configure right buttons
+    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"Delete" backgroundColor:[UIColor redColor]],
+                          [MGSwipeButton buttonWithTitle:@"More" backgroundColor:[UIColor lightGrayColor]]];
+    cell.rightSwipeSettings.transition = MGSwipeTransitionBorder;
     return cell;
+    
 }
 - (IBAction)btnTakePicture:(id)sender {
     UIView * view = sender;
@@ -132,6 +164,26 @@
     [picker.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    //self.arrProducts = nil;
+    
+    if ( searchText.length > 0)
+      self.arrProducts = [PRODUCT produtosComNome:searchText];
+    else
+        self.arrProducts = [ PRODUCT getAllProducts];
+    
+    [self.tableViewProducts reloadData];
+    
+
+}
+
+
 
 /*
 #pragma mark - Navigation

@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(PRODUCT *)newProduto:(NSDictionary *)elements;
 +(NSArray *) getAllProducts;
++(NSArray *) produtosComNome:(NSString *)nome;
++(PRODUCT *) produtoComNome:(NSString *)nome;
 
 @end
 

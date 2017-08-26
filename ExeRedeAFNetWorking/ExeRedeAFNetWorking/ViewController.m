@@ -12,7 +12,7 @@
 #import <UIImageView+AFNetworking.h>
 #import <SVProgressHUD.h>
 #import "ServerAPI.h"
-
+#import "DetailCommentViewController.h"
 @interface ViewController ()
 
 @property (nonatomic) NSArray * comments;
@@ -93,6 +93,17 @@
 //         }	failure:^(AFHTTPRequestOperation	*operation,	NSError	*error)	{
 //             NSLog(@"Error:	%@",	error);
 //         }];
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *myObj = self.comments[ indexPath.row];
+    
+    DetailCommentViewController * viewDetail = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailCommentViewController"];
+    
+    
+    viewDetail.comment = myObj;
+    //[self  presentViewController:viewDetail animated:YES completion:nil];
+    [self.navigationController pushViewController:viewDetail animated:YES];
 }
 
 

@@ -16,6 +16,9 @@
 		815DD5391F362E2100DBCC10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815DD5371F362E2100DBCC10 /* LaunchScreen.storyboard */; };
 		815DD5421F36471100DBCC10 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815DD5411F36471100DBCC10 /* CustomTableViewCell.m */; };
 		815DD5481F3650D700DBCC10 /* NovoComentarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815DD5471F3650D700DBCC10 /* NovoComentarioViewController.m */; };
+		819064301F51E8D500DA1DA4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8190642F1F51E8D500DA1DA4 /* LoginViewController.m */; };
+		819064321F51F03900DA1DA4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 819064311F51F03900DA1DA4 /* MapKit.framework */; };
+		819064351F51F88800DA1DA4 /* DetailCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819064341F51F88800DA1DA4 /* DetailCommentViewController.m */; };
 		81A688741F3F6AEB00EAF54A /* ServerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A688731F3F6AEB00EAF54A /* ServerAPI.m */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,11 @@
 		815DD5411F36471100DBCC10 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		815DD5461F3650D700DBCC10 /* NovoComentarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NovoComentarioViewController.h; sourceTree = "<group>"; };
 		815DD5471F3650D700DBCC10 /* NovoComentarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NovoComentarioViewController.m; sourceTree = "<group>"; };
+		8190642E1F51E8D500DA1DA4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		8190642F1F51E8D500DA1DA4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		819064311F51F03900DA1DA4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		819064331F51F88800DA1DA4 /* DetailCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCommentViewController.h; sourceTree = "<group>"; };
+		819064341F51F88800DA1DA4 /* DetailCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCommentViewController.m; sourceTree = "<group>"; };
 		81A688721F3F6AEB00EAF54A /* ServerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerAPI.h; sourceTree = "<group>"; };
 		81A688731F3F6AEB00EAF54A /* ServerAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerAPI.m; sourceTree = "<group>"; };
 		D6BE1E3E76024D9DEBB89E07 /* Pods-ExeRedeAFNetWorking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExeRedeAFNetWorking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExeRedeAFNetWorking/Pods-ExeRedeAFNetWorking.debug.xcconfig"; sourceTree = "<group>"; };
@@ -46,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				819064321F51F03900DA1DA4 /* MapKit.framework in Frameworks */,
 				6F449058CF031200AEE3B5CE /* libPods-ExeRedeAFNetWorking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +65,7 @@
 		4DA3BE8989FA05D323E9FFBC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				819064311F51F03900DA1DA4 /* MapKit.framework */,
 				F59F29CEEE21A20293B366E7 /* libPods-ExeRedeAFNetWorking.a */,
 			);
 			name = Frameworks;
@@ -97,6 +107,10 @@
 				815DD5471F3650D700DBCC10 /* NovoComentarioViewController.m */,
 				81A688721F3F6AEB00EAF54A /* ServerAPI.h */,
 				81A688731F3F6AEB00EAF54A /* ServerAPI.m */,
+				8190642E1F51E8D500DA1DA4 /* LoginViewController.h */,
+				8190642F1F51E8D500DA1DA4 /* LoginViewController.m */,
+				819064331F51F88800DA1DA4 /* DetailCommentViewController.h */,
+				819064341F51F88800DA1DA4 /* DetailCommentViewController.m */,
 			);
 			path = ExeRedeAFNetWorking;
 			sourceTree = "<group>";
@@ -250,6 +264,8 @@
 				81A688741F3F6AEB00EAF54A /* ServerAPI.m in Sources */,
 				815DD5311F362E2100DBCC10 /* ViewController.m in Sources */,
 				815DD52E1F362E2100DBCC10 /* AppDelegate.m in Sources */,
+				819064301F51E8D500DA1DA4 /* LoginViewController.m in Sources */,
+				819064351F51F88800DA1DA4 /* DetailCommentViewController.m in Sources */,
 				815DD5421F36471100DBCC10 /* CustomTableViewCell.m in Sources */,
 				815DD52B1F362E2100DBCC10 /* main.m in Sources */,
 			);

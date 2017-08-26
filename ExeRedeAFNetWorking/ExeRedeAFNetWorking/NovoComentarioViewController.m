@@ -8,6 +8,9 @@
 
 #import "NovoComentarioViewController.h"
 #import <AFNetworking.h>
+
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
 @interface NovoComentarioViewController ()
 
 @end
@@ -15,8 +18,23 @@
 @implementation NovoComentarioViewController
 
 - (void)viewDidLoad {
+    [self initLocationService];
+    
+    if(IS_OS_8_OR_LATER){
+        NSUInteger code = [CLLocationManager authorizationStatus];
+        if (code == kCLAuthorizationStatusNotDetermined && ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)] || [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])) {
+            // choose one request according to your business.
+            if([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"]) {
+                [self.locationManager  requestWhenInUseAuthorization];
+            } else {
+                NSLog(@"Info.plist does not contain NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsageDescription");
+            }
+        }
+    }
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,20 +42,43 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)gravarNovoComentario:(id)sender {
-    AFHTTPRequestOperationManager	*manager	=	[AFHTTPRequestOperationManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    NSDictionary	*parameters	=	@{@"user":	_txtUser.text, @"content": _txtComentario.text};
+     AFHTTPRequestOperationManager	*manager	=	[AFHTTPRequestOperationManager manager];
     
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    NSDictionary	*parameters	=	@{@"comment[user]":	_txtUser.text,
+                                      @"comment[content]": _txtComentario.text,
+                                      @"comment[lat]"  : [NSNumber numberWithDouble: self.locationManager.location.coordinate.latitude],
+                                      @"comment[lng]" :  [NSNumber numberWithDouble: self.locationManager.location.coordinate.longitude]  };
+    
+  //  NSString *caminho = [[NSBundle mainBundle] pathForResource:_imgComment ofType:@"jpg"]; // or ofType:@"png", etc.
+    NSData *imageData = UIImageJPEGRepresentation(_imgComment.image,0.5);
+
+    
+    //NSLog( @" %@", stringImagePath);
+ //    NSData * imgData = [ NSData ];
+    NSString * fileName = [self getCurrentDate];
     [manager
         POST:@"http://teste-aula-ios.herokuapp.com/comments.json"
         parameters:parameters
+        constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithFileData:imageData name:@"comment[picture]" fileName:[NSString stringWithFormat:@"img_%@.jpg",fileName ] mimeType:@"image/jpeg" ];
+        }
+     
         success:^(AFHTTPRequestOperation	*operation,	id responseObject)	{
                NSLog(@"JSON:	%@",	responseObject);
             [ self.navigationController popViewControllerAnimated:YES];
         }
         failure:^(AFHTTPRequestOperation	*operation,	NSError	*error)	{
-               NSLog(@"Error:	%@",	error);		
+            NSInteger * returnStatus = [operation.response statusCode];
+            if(  returnStatus == 401 ) {
+                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+            }
+           NSLog(@"Error:	%@",	error);
+            NSLog(@"Error:	%@",	operation.responseString);
+            
         }];
+    
+    
 }
 - (IBAction)btnCancelar:(id)sender {
     [ self.navigationController popViewControllerAnimated:YES];
@@ -94,6 +135,22 @@
     cameraUI.delegate = delegate; 
     [controller presentViewController: cameraUI animated: YES completion:nil];  return YES; 
 }
+-(NSString * ) getCurrentDate{
+    NSDate *currentDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"ddMMYYHHmmss"];
+    NSString *dateString = [dateFormatter stringFromDate:currentDate];
+    return dateString;
+}
+
+- (void) initLocationService{
+    self.locationManager = [[ CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    [self.locationManager startUpdatingHeading];
+}
+
 
 /*
 #pragma mark - Navigation

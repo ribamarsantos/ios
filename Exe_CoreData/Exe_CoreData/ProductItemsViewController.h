@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "PRODUCT+CoreDataClass.h"
-@interface ProductItemsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+#import <MGSwipeTableCell.h>"
+
+@interface ProductItemsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UISearchBarDelegate, MGSwipeTableCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableViewProducts;
-@property (weak, nonatomic) NSArray * arrProducts;
+@property (strong, nonatomic) NSArray * arrProducts;
 @property (weak, nonatomic) PRODUCT * selectedProd;
 @property (weak, nonatomic) UIImagePickerController   * imagePicker;
+@property (weak, nonatomic) IBOutlet UISearchBar *txtSearchProduto;
 @end
